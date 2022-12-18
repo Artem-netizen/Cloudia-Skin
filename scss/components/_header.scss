@@ -1,0 +1,12 @@
+.header {
+	@include flex(center);
+	justify-content: space-between;
+	background-color: $theme-light;
+	border-bottom: 1px solid $theme-black;
+
+	&-top {
+		padding: 12px 0;
+		@include flex(center);
+		justify-content: center;
+	}
+}

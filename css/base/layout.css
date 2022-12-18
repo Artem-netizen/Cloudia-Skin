@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Raleway", sans-serif;
+}

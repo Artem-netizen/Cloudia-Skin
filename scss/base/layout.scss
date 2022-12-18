@@ -1,0 +1,131 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	font-weight: normal;
+	font-family: 'Raleway', sans-serif;
+	background-color: $theme-light;
+}
+//
+
+.wrapper {
+	overflow: hidden;
+}
+
+//
+.container {
+	position: relative;
+	margin-inline: auto;
+	width: min(100% - 34px, 1282px);
+	border-left: 1px solid $theme-black;
+	border-right: 1px solid $theme-black;
+}
+
+//
+.decor {
+	position: relative;
+	flex: 1;
+	display: block;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 18px;
+		height: 18px;
+		transform: translate(-50%,-50%);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-image: url('/img/rhombus.svg');
+	}
+}
+
+.logo {
+	display: inline-block;
+	width: min(318px, 100%);
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+//
+.row {
+	gap: 30px;
+	flex-wrap: wrap;
+	@include flex(flex-start);
+	justify-content: space-between;
+}
+
+.left {
+	max-width: 227px;
+	width: 100%;
+}
+
+.right {
+	flex: 1 1 355px;
+	max-width: 360px;
+	width: 100%;
+}
+
+//
+.form {
+	width: 100%;
+	margin-bottom: 60px;
+	@include flex(stretch);
+	justify-content: space-between;
+	
+	&-group {
+		position: relative;
+		flex: 1;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+//
+.social {
+	@include flex(center);
+	li {
+		margin-right: 60px;
+		font-size: 0;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	a {
+		display: inline-block;
+		path {
+			transition: .2s;
+		}
+		&:hover {
+			path {
+				fill: $theme-blue;
+			}
+		}
+	}
+}
+
+//marquee
+.marquee {
+	padding: 15px;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	@include flex(center);
+	background: $theme-white;
+	border-top: 1px solid $theme-black;
+	p {
+		margin-right: 40px;
+		color: $theme-black;
+		letter-spacing: 0.04em;
+		font-family: 'Cinzel', serif;
+		@include font(14px, 19px, 400);
+	}
+}
